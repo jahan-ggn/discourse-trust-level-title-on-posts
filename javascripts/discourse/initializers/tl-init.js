@@ -1,5 +1,6 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 import { h } from "virtual-dom";
+import I18n from "I18n";
 
 export default {
   name: "tl-init",
@@ -15,7 +16,9 @@ const postTlInit = (api) => {
       let myPost = model.get("postStream.posts").find((x) => x.id === attrs.id);
       let trust_level = myPost.trust_level;
       const contents = this._super(...arguments);
-      contents.push(h("span.trust_level", "trust_level " + trust_level));
+      contents.push(
+        h("span.trust-level", I18n.t(themePrefix("tl"), { level: trust_level }))
+      );
       return contents;
     },
   });
