@@ -11,7 +11,7 @@ export default {
 const trustLevelTitleOnPost = (api) => {
   api.reopenWidget("poster-name", {
     html(attrs) {
-      let titles = {
+      const titles = {
         0: "new user",
         1: "basic user",
         2: "member",
