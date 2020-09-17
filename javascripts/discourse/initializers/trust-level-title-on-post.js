@@ -1,3 +1,4 @@
+import I18n from "I18n";
 import { withPluginApi } from "discourse/lib/plugin-api";
 import { h } from "virtual-dom";
 
@@ -12,11 +13,11 @@ const trustLevelTitleOnPost = (api) => {
   api.reopenWidget("poster-name", {
     html(attrs) {
       const titles = {
-        0: "new user",
-        1: "basic user",
-        2: "member",
-        3: "regular",
-        4: "leader",
+        0: I18n.t(themePrefix("trust_levels.newuser.title")),
+        1: I18n.t(themePrefix("trust_levels.basicuser.title")),
+        2: I18n.t(themePrefix("trust_levels.member.title")),
+        3: I18n.t(themePrefix("trust_levels.regular.title")),
+        4: I18n.t(themePrefix("trust_levels.leader.title")),
       };
       let model = api._lookupContainer("controller:topic").model;
       let myPost = model.get("postStream.posts").find((x) => x.id === attrs.id);

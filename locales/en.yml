@@ -1,0 +1,12 @@
+en:
+  trust_levels:
+    member:
+      title: "member"
+    leader:
+      title: "leader"
+    newuser:
+      title: "new user"
+    regular:
+      title: "regular"
+    basicuser:
+      title: "basic user"
